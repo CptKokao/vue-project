@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-layout row>
-      <v-flex xs12>
+      <v-flex>
         <h1>Login</h1>
       </v-flex>
     </v-layout>
@@ -10,8 +10,8 @@
 
 <script>
 export default {
-  data() {
-    return {};
+  data () {
+    return {}
   }
-};
+}
 </script>

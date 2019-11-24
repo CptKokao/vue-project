@@ -1,5 +1,6 @@
 <template>
   <v-app>
+
     <v-navigation-drawer app temporary v-model="drawer">
       <!-- Боковая панель -->
       <v-list>
@@ -15,28 +16,31 @@
       </v-list>
     </v-navigation-drawer>
 
-    <div>
-      <!-- Верхняя панель -->
-      <v-toolbar app dark color="primary">
-        <!-- Часть с бургером -->
-        <v-app-bar-nav-icon
-          @click="drawer = !drawer"
-          class="hidden-md-and-up"
-        ></v-app-bar-nav-icon>
-        <v-toolbar-title>Ad application</v-toolbar-title>
-        <v-spacer></v-spacer>
+    <!-- Верхняя панель -->
+    <v-app-bar app dark color="primary">
+      <!-- Часть с бургером -->
+      <v-app-bar-nav-icon
+        @click="drawer = !drawer"
+        class="hidden-md-and-up"
+      ></v-app-bar-nav-icon>
+      <v-toolbar-title>Ad application</v-toolbar-title>
+      <v-spacer></v-spacer>
 
-        <!-- Часть с навигацией -->
-        <v-toolbar-items class="hidden-sm-and-down">
-          <v-btn v-for="link in links" :key="link.title" :to="link.url" text>
-            <v-icon left>{{ link.icon }}</v-icon>
-            {{ link.title }}
-          </v-btn>
-        </v-toolbar-items>
-      </v-toolbar>
-    </div>
+      <!-- Часть с навигацией -->
+      <v-toolbar-items class="hidden-sm-and-down">
+        <v-btn v-for="link in links" :key="link.title" :to="link.url" text>
+          <v-icon left>{{ link.icon }}</v-icon>
+          {{ link.title }}
+        </v-btn>
+      </v-toolbar-items>
+    </v-app-bar>
 
-    <v-content> </v-content>
+    <v-content>
+      <v-container fluid>
+        <router-view></router-view>
+      </v-container>
+    </v-content>
+
   </v-app>
 </template>
 

@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import VueRouter from 'vue-router'
+import Router from 'vue-router'
 import Home from '@/components/Home'
 import Ad from '@/components/Ads/Ad'
 import AdList from '@/components/Ads/AddList'
@@ -8,9 +8,9 @@ import Login from '@/components/Auth/Login'
 import Registration from '@/components/Auth/Registration'
 import Orders from '@/components/User/Orders'
 
-Vue.use(VueRouter)
+Vue.use(Router)
 
-export default new VueRouter({
+export default new Router({
   routers: [
     {
       path: '',
@@ -18,7 +18,7 @@ export default new VueRouter({
       component: Home
     },
     {
-      path: 'ad/:id',
+      path: '/ad/:id',
       name: 'ad',
       component: Ad
     },
